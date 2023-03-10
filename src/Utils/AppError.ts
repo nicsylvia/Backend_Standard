@@ -1,0 +1,6 @@
+export enum HTTPCODES {
+    OK = 200,
+    CREATED = 201,
+    NOT_ACCEPTED = 406,
+    INTERNAL_SERVER_ERROR = 500
+}
