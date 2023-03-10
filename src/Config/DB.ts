@@ -1,6 +1,7 @@
 import mongoose from "mongoose";
+import { environmentVariables } from "./environmentVariables";
 
-const DB_URL = "mongodb://localhost/StandardBackend";
+const DB_URL = environmentVariables.DBURI ;
 
 const DBconfig = async() =>{
     try {
