@@ -8,6 +8,10 @@ const AppConfig = (app: Application) =>{
     app.use(express.json())
     app.use(cors())
     app.use(morgan("dev"))
+
+    // Error Handler
 }
 
-export default AppConfig
+export default AppConfig;
+
+// Use is what express has given you to construct a middleware.
