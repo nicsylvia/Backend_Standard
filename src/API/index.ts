@@ -4,4 +4,6 @@ import homeroutes from "../Routes/homeroutes";
 
 const router = Router()
 
-router.route("/")
+router.get("/", homeroutes)
+
+export default router
