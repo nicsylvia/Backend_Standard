@@ -1,5 +1,7 @@
 import express, { Application } from "express";
-import { AppConfig } from "./app";
+
+import  AppConfig  from "./app";
+
 import { environmentVariables } from "./Config/environmentVariables";
 
 const port = environmentVariables.port;
