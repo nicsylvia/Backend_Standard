@@ -53,9 +53,15 @@ UserSchema.pre("save", async function(next){
     user.confirmPassword = user.password;
 
     next();
-
-
 })
+
+//Methods to compare password
+UserSchema.methods.comparePassword = async function (userPassword:string) {
+   
+    const isMatch = await bcrypt.compare(userPassword, this.password)
+    
+    return isMatch
+}
 
 const UserModel = model<IUSER>("User", UserSchema);
 
