@@ -33,3 +33,22 @@ return res.status(HTTPCODES.CREATED).json({
     data: User,
 })
 })
+
+// LOGIN:
+export const Login = AsyncHandler(async(
+    req: Request<{}, {}, IUSER>,
+    res: Response,
+    next: NextFunction
+) =>{
+    const { email, password } = req.body;
+
+    const user = await UserModel.findOne({ email })
+
+    
+    if (!email) next(
+        new AppError({
+            message: "Please Input the right Email",
+            httpcode: HTTPCODES.BAD_REQUESTED,
+        })
+    );
+})
