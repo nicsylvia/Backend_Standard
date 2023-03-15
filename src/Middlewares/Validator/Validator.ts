@@ -1,6 +1,8 @@
 import { NextFunction } from "express";
 
-import joi, { object } from "joi";
+import Joi from "joi";
+
+import { AppError, HTTPCODES } from "../../Utils/AppError";
 
 export const validator = (
     schemaName: Joi.ObjectSchema,
@@ -15,7 +17,7 @@ export const validator = (
     try {
         value.error ? next(
             new AppError({
-                httpCode: HttpCode.UNPROCESSABLE_IDENTITY,
+                httpcode: HTTPCODES.UNPROCESSABLE_IDENTITY,
                 message: value.error.details[0].message,
             })
         ) : next()
