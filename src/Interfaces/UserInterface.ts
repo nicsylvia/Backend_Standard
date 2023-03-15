@@ -7,3 +7,7 @@ export interface IUSER extends Document{
     confirmPassword: string;
     role: string
 }
+
+export interface IUserDocument extends Document, IUSER{
+    comparePassword(password: string): Promise<boolean>;
+}

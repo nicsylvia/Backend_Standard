@@ -39,6 +39,7 @@ const UserSchema: Schema<IUSER> = new Schema({
     timestamps: true
 });
 
+// Middleware for hashing password
 UserSchema.pre("save", async function(next){
  
     let user = this
